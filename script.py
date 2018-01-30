@@ -8,9 +8,9 @@ response=kittens.read()
 
 body=response[559:1000]
 
-print(body)
+# print(body)
 
 #using the requests library
-r=requests.get("http://www.google.com")
+response=requests.get("http://www.google.com")
 
-print(r)
+print(response.status_code)
