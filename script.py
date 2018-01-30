@@ -13,4 +13,9 @@ body=response[559:1000]
 #using the requests library
 response=requests.get("http://www.google.com")
 
-print(response.status_code)
+
+
+print(response.headers['content-type'])#header
+print(response.encoding)#encoding
+print(response.text)#text
+print(response.json())#get json
