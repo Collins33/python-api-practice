@@ -16,13 +16,21 @@ def getNews(category):
     data= json.load(json_object)#turn the response into json
 
 
-    for news in data['articles']:
+    for news in data['articles']:#loop through the response
+        #get the title,description and url
         title=news["title"]
         description=news["description"]
         url=news["url"]
+        #build the object 
         habari=Broadcast(title,description,url)
+        #append the object into the empty list
         news_list.append(habari)
-    print(news_list[0].title)    
+
+    # loop through the list with news objects and print the news title
+    for x in range(0,len(news_list)):
+        print(news_list[x].title)
+        print(news_list[x].description)
+        print("                       ")    
 
 
 
