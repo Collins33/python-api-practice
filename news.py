@@ -5,11 +5,20 @@ from credentials import *
 
 
 
-news_url="https://newsapi.org/v2/everything?q=health&sortBy=publishedAt&apiKey=" +str(news_api)
-json_object=urllib2.urlopen(news_url)#using urllib urlopen method to open the url
 
-data= json.load(json_object)#turn the response into json
+def getNews(category):
 
 
-for news in data['articles']:
-    print (news["description"])
+    news_url="https://newsapi.org/v2/everything?q="+str(category)+"&sortBy=publishedAt&apiKey=" +str(news_api)
+    json_object=urllib2.urlopen(news_url)#using urllib urlopen method to open the url
+
+    data= json.load(json_object)#turn the response into json
+
+
+    for news in data['articles']:
+
+        print (news["description"])
+
+
+getNews("politics")
+
