@@ -6,8 +6,10 @@ from credentials import *
 
 
 
-json_object=urllib2.urlopen(news_url)
+json_object=urllib2.urlopen(news_url)#using urllib urlopen method to open the url
 
-data= json.load(json_object)
+data= json.load(json_object)#turn the response into json
 
-print(data)
+
+for news in data['articles']:
+    print (news)
